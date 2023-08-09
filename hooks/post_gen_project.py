@@ -17,7 +17,7 @@ def delete_resource(resource):
 
 if lisence == "None":
     delete_resource("LICENSE")
-if jwt != 2:
+if jwt != "jwt":
     delete_resource(f"{project_slug}/authentication/")
     delete_resource(f"{project_slug}/users/")
 
