@@ -16,7 +16,7 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 LOCAL_APPS = [
     '{{cookiecutter.project_slug}}.core.apps.CoreConfig',
     '{{cookiecutter.project_slug}}.common.apps.CommonConfig',
-{%- if cookiecutter.use_jwt == 2 %}
+{%- if cookiecutter.use_auth == 2 %}
     '{{cookiecutter.project_slug}}.users.apps.UsersConfig',
     '{{cookiecutter.project_slug}}.authentication.apps.AuthenticationConfig',
 {%- endif %}
@@ -30,7 +30,7 @@ THIRD_PARTY_APPS = [
     'corsheaders',
     'drf_spectacular',
     'django_extensions',
-    {%- if cookiecutter.use_auth == "1" %}
+    {%- if cookiecutter.use_auth == 1 %}
     'rest_framework.authtoken',
     'dj_rest_auth',
     'allauth',
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    {%- if cookiecutter.use_auth == "1" %}
+    {%- if cookiecutter.use_auth == 1 %}
     'django.contrib.sites',
     {%- endif %}
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
@@ -132,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-{%- if cookiecutter.use_jwt == "y" %}
+{%- if cookiecutter.use_auth == 2 %}
 AUTH_USER_MODEL = 'users.BaseUser'
 {%- endif %}
 
