@@ -3,7 +3,7 @@ import shutil
 
 
 lisence = "{{cookiecutter.license}}"
-jwt = "{{cookiecutter.use_jwt}}"
+jwt = "{{cookiecutter.use_auth}}"
 project_slug = "{{cookiecutter.project_slug}}"
 
 def delete_resource(resource):
@@ -17,7 +17,7 @@ def delete_resource(resource):
 
 if lisence == "None":
     delete_resource("LICENSE")
-if jwt == "n":
+if jwt != 2:
     delete_resource(f"{project_slug}/authentication/")
     delete_resource(f"{project_slug}/users/")
 
