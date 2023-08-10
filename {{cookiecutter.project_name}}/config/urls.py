@@ -18,6 +18,7 @@ urlpatterns = [
     path("redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
     path('admin/', admin.site.urls),
     path('api/', include(('{{cookiecutter.project_slug}}.api.urls', 'api'))),
+
     {%- if cookiecutter.use_auth == "dj-rest-auth" %}
     re_path(r'^', include('dj_rest_auth.urls')),
 
