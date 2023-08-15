@@ -6,10 +6,14 @@ from django.conf.urls.static import static
 from dj_rest_auth.views import PasswordResetConfirmView, PasswordResetView
 from dj_rest_auth.registration.views import VerifyEmailView
 
-from drf_spectacular.views import (
-    SpectacularAPIView,
-    SpectacularRedocView,
-    SpectacularSwaggerView,
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title='API Docs',
+        default_version='v1',
+    )
 )
 
 urlpatterns = [

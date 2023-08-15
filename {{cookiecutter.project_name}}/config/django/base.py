@@ -28,7 +28,6 @@ THIRD_PARTY_APPS = [
     'django_celery_results',
     'django_celery_beat',
     'corsheaders',
-    'drf_spectacular',
     'django_extensions',
     {%- if cookiecutter.use_auth == "dj-rest-auth" %}
     'rest_framework.authtoken',
