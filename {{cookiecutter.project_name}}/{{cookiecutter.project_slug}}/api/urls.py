@@ -2,6 +2,6 @@ from django.urls import path, include
 
 urlpatterns = [
 {%- if cookiecutter.files == "y" %}
-    path('files/', include(('djangostyleguide3.files.urls', 'files'))),
+    path('files/', include(('{{cookiecutter.project_slug}}.files.urls', 'files'))),
 {%- endif %}
 ]
