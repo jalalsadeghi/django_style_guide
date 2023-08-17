@@ -1,5 +1,7 @@
 from django.urls import path, include
 
 urlpatterns = [
-    # path('blog/', include(('{{cookiecutter.project_slug}}.blog.urls', 'blog')))
+{%- if cookiecutter.files == "y" %}
+    path('files/', include(('djangostyleguide3.files.urls', 'files'))),
+{%- endif %}
 ]

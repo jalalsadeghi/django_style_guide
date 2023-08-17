@@ -2,9 +2,11 @@ import os
 import shutil
 
 
+project_name = "{{cookiecutter.project_name}}"
+project_slug = "{{cookiecutter.project_slug}}"
 lisence = "{{cookiecutter.license}}"
 jwt = "{{cookiecutter.use_auth}}"
-project_slug = "{{cookiecutter.project_slug}}"
+files = "{{cookiecutter.files}}"
 
 def delete_resource(resource):
     if os.path.isfile(resource):
@@ -17,8 +19,14 @@ def delete_resource(resource):
 
 if lisence == "None":
     delete_resource("LICENSE")
+
 if jwt != "jwt":
     delete_resource(f"{project_slug}/authentication/")
     delete_resource(f"{project_slug}/users/")
+
+if files != "y":
+    delete_resource(f"{project_slug}/files/")
+    delete_resource(f"{project_slug}/integrations/")
+    delete_resource(f"config/settings/files_and_storages.py/")
 
 

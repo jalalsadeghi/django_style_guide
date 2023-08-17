@@ -20,6 +20,9 @@ LOCAL_APPS = [
     '{{cookiecutter.project_slug}}.users.apps.UsersConfig',
     '{{cookiecutter.project_slug}}.authentication.apps.AuthenticationConfig',
 {%- endif %}
+{%- if cookiecutter.files == "y" %}
+    '{{cookiecutter.project_slug}}.files.apps.FilesConfig',
+{%- endif %}
 ]
 
 THIRD_PARTY_APPS = [
@@ -196,4 +199,7 @@ from config.settings.celery import *  # noqa
 from config.settings.swagger import *  # noqa
 #from config.settings.sentry import *  # noqa
 from config.settings.email_sending import *  # noqa
+{%- if cookiecutter.files == "y" %}
+from config.settings.files_and_storages import *  # noqa
+{%- endif %}
 
