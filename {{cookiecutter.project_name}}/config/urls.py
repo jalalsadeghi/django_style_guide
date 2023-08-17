@@ -17,9 +17,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path("schema/", SpectacularAPIView.as_view(api_version="v1"), name="schema"),
-    path("", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
-    path("redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
+    re_path(r'^$', schema_view.with_ui('swagger', cache_timeout=0), name='schema'),
     path('admin/', admin.site.urls),
     path('api/', include(('{{cookiecutter.project_slug}}.api.urls', 'api'))),
 
