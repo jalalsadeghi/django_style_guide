@@ -79,4 +79,4 @@ class DebugToolbarSetup:
 
         import debug_toolbar  # noqa
 
-        return urlpatterns + [path("__debug__/", include(debug_toolbar.urls))]
+        return [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns

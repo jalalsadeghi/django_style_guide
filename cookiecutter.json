@@ -12,6 +12,8 @@
 
   "use_auth": ["dj-rest-auth", "jwt", "None"],
 
+  "debug_toolbar": "y",
+
   "files": "y",
 
   "_copy_without_render": [

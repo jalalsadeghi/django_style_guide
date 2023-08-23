@@ -37,3 +37,9 @@ urlpatterns = [
     ),
     {%- endif %}
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+{%- if cookiecutter.debug_toolbar == "y" %}
+from config.settings.debug_toolbar.setup import DebugToolbarSetup  # noqa
+
+urlpatterns = DebugToolbarSetup.do_urls(urlpatterns)
+{%- endif %}
