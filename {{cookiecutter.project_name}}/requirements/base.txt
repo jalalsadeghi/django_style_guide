@@ -10,7 +10,7 @@ dj-rest-auth @ git+https://github.com/iMerica/dj-rest-auth.git@master
 django-allauth>=0.24.1<0.55.0
 drf-yasg==1.21.4
 coreapi==2.3.3
-{%- elif %}
+{%- else %}
 drf-spectacular==0.24.2
 {%- endid %}
 

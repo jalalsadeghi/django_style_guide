@@ -22,7 +22,7 @@ doc_patterns = [
     path('admin/', admin.site.urls),
     path('api/', include(('{{cookiecutter.project_slug}}.api.urls', 'api'))),
 ]
-{%- elif %}
+{%- else %}
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 doc_patterns = [
