@@ -12,7 +12,7 @@ drf-yasg==1.21.4
 coreapi==2.3.3
 {%- else %}
 drf-spectacular==0.24.2
-{%- endid %}
+{%- endif %}
 
 celery==5.2.7
 django-celery-results==2.4.0
