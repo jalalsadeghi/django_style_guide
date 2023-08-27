@@ -41,6 +41,8 @@ THIRD_PARTY_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'drf_yasg',
+    {%- elif %}
+    'drf_spectacular',
     {%- endif %}
 ]
 

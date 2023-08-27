@@ -5,11 +5,14 @@ djangorestframework==3.13.1
 djangorestframework-simplejwt==5.2.2
 django-cors-headers==3.13.0
 
+{%- if cookiecutter.debug_toolbar == "y" %}
 dj-rest-auth @ git+https://github.com/iMerica/dj-rest-auth.git@master
-django-allauth>=0.24.1
+django-allauth>=0.24.1<0.55.0
 drf-yasg==1.21.4
 coreapi==2.3.3
-
+{%- elif %}
+drf-spectacular==0.24.2
+{%- endid %}
 
 celery==5.2.7
 django-celery-results==2.4.0
@@ -25,8 +28,6 @@ drf-jwt==1.19.2
 
 boto3==1.24.71
 attrs==22.1.0
-
-drf-spectacular==0.24.2
 
 django-redis==5.2.0
 Faker==15.1.1
