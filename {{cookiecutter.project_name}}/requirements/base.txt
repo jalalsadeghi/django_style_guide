@@ -5,9 +5,9 @@ djangorestframework==3.13.1
 djangorestframework-simplejwt==5.2.2
 django-cors-headers==3.13.0
 
-{%- if cookiecutter.debug_toolbar == "y" %}
-dj-rest-auth @ git+https://github.com/iMerica/dj-rest-auth.git@master
 django-allauth>=0.24.1<0.55.0
+{%- if cookiecutter.use_auth == "y" %}
+dj-rest-auth @ git+https://github.com/iMerica/dj-rest-auth.git@master
 drf-yasg==1.21.4
 coreapi==2.3.3
 {%- else %}

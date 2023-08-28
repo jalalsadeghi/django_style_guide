@@ -3,7 +3,7 @@
 E_NO_POSTGRES_USERNAME=60
 
 POSTGRES_USERNAME="$1"
-DATABASE_NAME="{{cookiecutter.project_slug}}"
+DATABASE_NAME="{{cookiecutter.postgres_db}}"
 
 if [[ -z "$POSTGRES_USERNAME" ]]
 then
