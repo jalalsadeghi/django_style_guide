@@ -5,6 +5,11 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import transaction
 from django.utils import timezone
+{%- if cookiecutter.use_auth == "jwt" %}
+from {{cookiecutter.project_slug}}.users.models import BaseUser
+{%- else %}
+from django.contrib.auth.models import User as BaseUser
+{%- endif %}
 
 from {{cookiecutter.project_slug}}.files.enums import FileUploadStorage
 from {{cookiecutter.project_slug}}.files.models import File
@@ -15,12 +20,6 @@ from {{cookiecutter.project_slug}}.files.utils import (
     file_generate_upload_path,
 )
 from {{cookiecutter.project_slug}}.integrations.aws.client import s3_generate_presigned_post
-
-{%- if cookiecutter.use_auth == "jwt" %}
-from {{cookiecutter.project_slug}}.users.models import BaseUser
-{%- elif cookiecutter.use_auth == "dj-rest-auth" %}
-from django.contrib.auth.models import User as BaseUser
-{%- endif %}
 
 
 def _validate_file_size(file_obj):

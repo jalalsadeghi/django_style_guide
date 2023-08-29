@@ -27,16 +27,16 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',
     'django_filters',
     'django_celery_results',
     'django_celery_beat',
     'corsheaders',
     'django_extensions',
-    {%- if cookiecutter.use_auth == "dj-rest-auth" %}
-    'rest_framework.authtoken',
-    'dj_rest_auth',
     'allauth',
     'allauth.account',
+    {%- if cookiecutter.use_auth == "dj-rest-auth" %}
+    'dj_rest_auth',
     'dj_rest_auth.registration',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',

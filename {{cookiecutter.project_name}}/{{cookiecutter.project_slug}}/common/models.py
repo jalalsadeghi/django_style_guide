@@ -11,6 +11,14 @@ class BaseModel(models.Model):
         abstract = True
 
 
+class SoftModel(BaseModel):
+    is_deleted = models.BooleanField(default=False)
+    delete_at = models.DateTimeField(db_index=True, auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
 class RandomModel(BaseModel):
     """
     This is an example model, to be used as reference in the Styleguide,

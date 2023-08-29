@@ -9,6 +9,8 @@ from {{cookiecutter.project_slug}}.files.utils import file_generate_upload_path
 from {{cookiecutter.project_slug}}.users.models import BaseUser
 {%- elif cookiecutter.use_auth == "dj-rest-auth" %}
 from django.contrib.auth.models import User as BaseUser
+{%- else %}
+
 {%- endif %}
 
 
